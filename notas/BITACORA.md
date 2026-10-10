@@ -1,7 +1,8 @@
 # Bitacora de JavaScript interactivo
 
 Laboratorio 08: JavaScript Interactivo - DOM, Eventos y Objetos.
-Navegador usado: Google Chrome)
+
+Navegador usado: Google Chrome.
 
 ## Ejercicio 2: Seleccionar y modificar el DOM
 
@@ -25,23 +26,19 @@ Navegador usado: Google Chrome)
 
 | Prueba                                  | Que paso en la pantalla                    | Se recargo la pagina (Si/No) |
 | --------------------------------------- | ------------------------------------------ | ---------------------------- |
-| Escribir en el campo nombre             | El nombre se escribía la lado del 'Hola, ' | No                           |
+| Escribir en el campo nombre             | El nombre se escribía la lado del 'Hola,...' | No                           |
 | Enviar sin preventDefault               | La pantalla se recargaba al instante       | Si                           |
 | Enviar con preventDefault, correo sin @ | Mensaje de error                           | No                           |
-| Enviar con preventDefault, correo con @ | Mensaje de confirmación de envió           | No                           |
+| Enviar con preventDefault, correo con @ | Mensaje de confirmación de envio           | No                           |
 
 ## Ejercicio 5: Clases y objetos
 
 | Objeto | nombre | precio | descripcion() | conDescuento(0.25) |
 | ------ | ------ | ------ | ------------- | ------------------ |
-| laptop | Laptop | 2500   |
-
-Laptop - S/ 2500.00 | |
-| mouse |Mouse |45 |Mouse - S/ 45.00 | |
-| teclado |Teclado |120 |
-
-Teclado - S/ 120.00 | |
-| monitor |Monitor |680 |Monitor - S/ 680.00 | |
+| laptop | Laptop | 2500   | Laptop - S/ 2500.00 |1875|
+| mouse |Mouse |45 |Mouse - S/ 45.00 |33.75|
+| teclado |Teclado |120 | Teclado - S/ 120.00 |90|
+| monitor |Monitor |680 |Monitor - S/ 680.00 |510|
 
 ## Ejercicio 6: DOM, eventos y objetos juntos
 
