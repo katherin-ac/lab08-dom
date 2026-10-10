@@ -47,13 +47,13 @@ Teclado - S/ 120.00 | |
 
 | Prueba          | Total que muestra la pagina | Correcto (Si/No) |
 | --------------- | --------------------------- | ---------------- |
-| Cuaderno 12.50  |                             |                  |
-| + Lapicero 3.20 |                             |                  |
-| + Mochila 89.90 |                             |                  |
-| Sin Number()    |                             |                  |
+| Cuaderno 12.50  | 12.50                       | Si               |
+| + Lapicero 3.20 | 15.70                       | Si               |
+| + Mochila 89.90 | 105.60                      | Si               |
+| Sin Number()    | 105.60                      | Si               |
 
-| Pieza  | Linea de tu codigo donde aparece | Para que sirve |
-| ------ | -------------------------------- | -------------- |
-| DOM    |                                  |                |
-| Evento |                                  |                |
-| Objeto |                                  |                |
+| Pieza  | Linea de tu codigo donde aparece                                          | Para que sirve                                                                |
+| ------ | ------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| DOM    | document.querySelector("#carrito") y document.createElement("li")         | Selecciona y crea elementos de HTML para mostrar los productos                |
+| Evento | formProducto.addEventListener("submit", (evento) => {...})                | Ejecuta el código cuando se envia el formulario. Evita que la página recargue |
+| Objeto | const producto = new Producto(prodNombre.value, Number(prodPrecio.value)) | Crea un objeto con el nombre y precio del producto ingresado                  |

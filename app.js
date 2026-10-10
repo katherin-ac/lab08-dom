@@ -18,13 +18,13 @@ const btnReiniciar = document.querySelector("#btnReiniciar");
 const contador = document.querySelector("#contador");
 let clics = 0;
 
-btnSumar.addEventListener("mouseover", (evento) => {
+btnSumar.addEventListener("click", (evento) => {
   clics = clics + 1;
   contador.textContent = clics;
   console.log(evento.type, evento.target);
 });
 
-btnReiniciar.addEventListener("mouseover", () => {
+btnReiniciar.addEventListener("click", () => {
   clics = 0;
   contador.textContent = clics;
 });
