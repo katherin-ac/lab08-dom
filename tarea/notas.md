@@ -70,6 +70,23 @@ Se agregó la clase tarea, atributos y métodos. Se pueden marcar y desmarcar ta
 
 ## Donde uso DOM, eventos y objetos
 
+| Concepto         | Dónde se usó                                                     | Para qué                                                              |
+| ---------------- | ---------------------------------------------------------------- | --------------------------------------------------------------------- |
+| DOM              | document.querySelector() y document.createElement()              | Para seleccionar elementos, crear tareas y agregarlo a la lista       |
+| Eventos          | addEventListener("submit", ...) y addEventListener("click", ...) | Para agregar tareas al enviar el formulario y marcarlas o eliminarlas |
+| Clases y objetos | cambiarEstado() , obtenerDescripcion() , Tarea() y class Tarea() | Para poder crear cada tarea con un atributo definido                  |
+
 ## Pruebas realizadas
 
+| Acción realizada            | Resultado esperado                                            | Resultado obtenido                                    | ¿Cumple? |
+| --------------------------- | ------------------------------------------------------------- | ----------------------------------------------------- | -------- |
+| Abrir la página             | Se muestran las tres tareas iniciales.                        | Se muestran las tres tareas iniciales.                | Sí       |
+| Agregar una tarea con texto | La tarea nueva aparece en la lista.                           | La tarea aparece en la lista sin recargar la página.  | Sí       |
+| Enviar el formulario vacío  | Aparece un mensaje de validación y no se agrega ninguna tarea | Aparece el mensaje solicitando escribir una tarea     | Sí       |
+| Completar una tarea         | El texto de la tarea aparece tachado                          | El texto aparece marcado al pulsar "Completar"        | Sí       |
+| Desmarcar una tarea         | El texto vuelve a mostrarse normalmente                       | El texto deja de estar tachado al pulsar «Desmarcar». | Sí       |
+| Eliminar una tarea          | La tarea desaparece de la lista                               | La tarea desaparece al pulsar "Eliminar"              | Sí       |
+
 ## Por que disene asi mi clase
+
+Diseñé la clase Tarea con los atributos "nombre" y "completada" porque cada tarea necesita almacenar su descripción y su estado. El método cambiarEstado() permite marcar una tarea como completada obtenerDescripcion() devuelve el nombre de la tarea para mostrarlo en la lista de la página. Cada tarea termina siendo un objeto con sus propios datos y comportamiento, para organizar y modificar la lista de forma mas sencilla.
