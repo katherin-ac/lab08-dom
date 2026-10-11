@@ -7,5 +7,5 @@ Bitacora de JavaScript interactive: DOM, eventos y objetos
 
 ## Desarrollo propio
 
-- [Tarea: mi componente interactivo](notas/TAREA.md)
+- [Tarea: mi componente interactivo](tarea/notas.md)
 - [Ver la tarea en vivo](https://katherin-ac.github.io/lab08-dom/tarea/)
