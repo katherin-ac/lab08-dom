@@ -50,6 +50,24 @@ Eventos submit y click para agregar y eliminar tareas mediante un formulario. In
 
 ## Version 3: con clases y objetos
 
+```class Tarea {
+  constructor(nombre) {
+    this.nombre = nombre;
+    this.completada = false;
+  }
+
+  cambiarEstado() {
+    this.completada = !this.completada;
+  }
+
+  obtenerDescripcion() {
+    return this.nombre;
+  }
+}
+```
+
+Se agregó la clase tarea, atributos y métodos. Se pueden marcar y desmarcar tareas. Hay un mensaje de validación debajo del input.
+
 ## Donde uso DOM, eventos y objetos
 
 ## Pruebas realizadas

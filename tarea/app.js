@@ -1,11 +1,27 @@
+class Tarea {
+  constructor(nombre) {
+    this.nombre = nombre;
+    this.completada = false;
+  }
+
+  cambiarEstado() {
+    this.completada = !this.completada;
+  }
+
+  obtenerDescripcion() {
+    return this.nombre;
+  }
+}
+
 const listaTareas = document.querySelector("#listaTareas");
 const formTarea = document.querySelector("#formTarea");
 const nuevaTarea = document.querySelector("#nuevaTarea");
+const mensaje = document.querySelector("#mensaje");
 
 const tareas = [
-  "Estudiar JavaScript",
-  "Completar la bitácora",
-  "Repasar el laboratorio",
+  new Tarea("Estudiar JavaScript"),
+  new Tarea("Completar la bitácora"),
+  new Tarea("Repasar el laboratorio"),
 ];
 
 function mostrarTareas() {
@@ -13,7 +29,21 @@ function mostrarTareas() {
 
   tareas.forEach((tarea, indice) => {
     const elemento = document.createElement("li");
-    elemento.textContent = tarea + " ";
+
+    const textoTarea = document.createElement("span");
+    textoTarea.textContent = tarea.obtenerDescripcion();
+
+    if (tarea.completada) {
+      textoTarea.style.textDecoration = "line-through";
+    }
+
+    const botonCompletar = document.createElement("button");
+    botonCompletar.textContent = tarea.completada ? "Desmarcar" : "Completar";
+
+    botonCompletar.addEventListener("click", () => {
+      tarea.cambiarEstado();
+      mostrarTareas();
+    });
 
     const botonEliminar = document.createElement("button");
     botonEliminar.textContent = "Eliminar";
@@ -23,7 +53,10 @@ function mostrarTareas() {
       mostrarTareas();
     });
 
+    elemento.appendChild(textoTarea);
+    elemento.appendChild(botonCompletar);
     elemento.appendChild(botonEliminar);
+
     listaTareas.appendChild(elemento);
   });
 }
@@ -34,12 +67,13 @@ formTarea.addEventListener("submit", (evento) => {
   const texto = nuevaTarea.value.trim();
 
   if (texto === "") {
-    alert("Escribe una tarea antes de agregarla.");
+    mensaje.textContent = "Escribe una tarea antes de agregarla.";
     return;
   }
 
-  tareas.push(texto);
+  tareas.push(new Tarea(texto));
   nuevaTarea.value = "";
+  mensaje.textContent = "Tarea agregada correctamente.";
   mostrarTareas();
 });
 mostrarTareas();
