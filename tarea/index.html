@@ -12,7 +12,7 @@
       }
       section {
         background: white;
-        padding: 20px;
+        padding: 10px;
         border-radius: 10px;
         margin-bottom: 20px;
       }
@@ -20,7 +20,7 @@
       input,
       select,
       button {
-        padding: 5px;
+        padding: 1px;
         margin: 3px 0;
         box-sizing: border-box;
       }
@@ -28,6 +28,15 @@
   </head>
   <body>
     <h1>Mi lista de tareas</h1>
+
+    <section>
+      <h2>Agregar tarea</h2>
+
+      <form id="formTarea">
+        <input type="text" id="nuevaTarea" placeholder="Escribe una tarea" />
+        <button type="submit">Agregar</button>
+      </form>
+    </section>
 
     <section>
       <h2>Mis tareas pendientes</h2>
