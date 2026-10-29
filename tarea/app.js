@@ -42,6 +42,9 @@ function mostrarTareas() {
 
     botonCompletar.addEventListener("click", () => {
       tarea.cambiarEstado();
+      mensaje.textContent = tarea.completada
+        ? "Tarea completada."
+        : "Tarea marcada como pendiente.";
       mostrarTareas();
     });
 
