@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lista de tareas</title>
+
     <style>
       :root {
         --color-fondo: #f4f6f8;
@@ -13,6 +14,7 @@
         --espaciado: 12px;
         --radio-borde: 10px;
       }
+
       body {
         font-family: Arial, sans-serif;
         max-width: 640px;
@@ -21,32 +23,27 @@
         background-color: var(--color-fondo);
         color: var(--color-texto);
       }
+
       section {
         background-color: var(--color-superficie);
         padding: calc(var(--espaciado) * 2);
         border-radius: var(--radio-borde);
         margin-bottom: 20px;
       }
+
       input,
       select,
       button {
-        padding: 10px;
-        margin: 2px 0;
         box-sizing: border-box;
-        font-size: 15px;
+        font-size: 16px;
+        margin: 6px 0;
       }
 
-      button {
-        min-height: 37px;
-        cursor: pointer;
+      input,
+      select {
+        padding: 12px;
       }
-      li span {
-        display: inline-block;
-        margin-right: 10px;
-      }
-      li button {
-        margin-left: 5px;
-      }
+
       button {
         background-color: var(--color-primario);
         color: #ffffff;
@@ -54,7 +51,6 @@
         border-radius: 6px;
         padding: 12px 16px;
         min-height: 44px;
-        font-size: 16px;
         cursor: pointer;
       }
 
@@ -63,9 +59,40 @@
       }
 
       button:focus-visible,
-      input:focus-visible {
+      input:focus-visible,
+      select:focus-visible {
         outline: 3px solid #f0a202;
         outline-offset: 3px;
+      }
+
+      li span {
+        display: inline-block;
+        margin-right: 10px;
+      }
+
+      li button {
+        margin-left: 5px;
+      }
+      .mensaje {
+        padding: 10px;
+        margin-top: 10px;
+        border-radius: 6px;
+        font-weight: bold;
+      }
+      .mensaje:empty {
+        display: none;
+      }
+
+      .mensaje.error {
+        color: #b42318;
+        background-color: #fee4e2;
+        border: 1px solid #fda29b;
+      }
+
+      .mensaje.exito {
+        color: #166534;
+        background-color: #dcfce7;
+        border: 1px solid #86efac;
       }
     </style>
   </head>
@@ -81,7 +108,7 @@
         <input type="text" id="nuevaTarea" placeholder="Ej. Estudiar Cálculo" />
 
         <button type="submit">Agregar</button>
-        <p id="mensaje" role="status" aria-live="polite"></p>
+        <p id="mensaje" class="mensaje" role="status" aria-live="polite"></p>
       </form>
     </section>
 

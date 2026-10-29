@@ -52,7 +52,13 @@ function mostrarTareas() {
     botonEliminar.textContent = "Eliminar";
 
     botonEliminar.addEventListener("click", () => {
+      const nombreEliminado = tarea.obtenerDescripcion();
+
       tareas.splice(indice, 1);
+
+      mensaje.className = "mensaje exito";
+      mensaje.textContent = `Se eliminó la tarea: ${nombreEliminado}.`;
+
       mostrarTareas();
     });
 
@@ -70,13 +76,17 @@ formTarea.addEventListener("submit", (evento) => {
   const texto = nuevaTarea.value.trim();
 
   if (texto === "") {
-    mensaje.textContent = "Escribe una tarea antes de agregarla.";
+    mensaje.className = "mensaje error";
+    mensaje.textContent =
+      "Error: debes escribir el nombre de una tarea antes de agregarla.";
     return;
   }
 
   tareas.push(new Tarea(texto));
   nuevaTarea.value = "";
+  mensaje.className = "mensaje exito";
   mensaje.textContent = "Tarea agregada correctamente.";
+
   mostrarTareas();
 });
 mostrarTareas();
