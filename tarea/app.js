@@ -17,13 +17,14 @@ const listaTareas = document.querySelector("#listaTareas");
 const formTarea = document.querySelector("#formTarea");
 const nuevaTarea = document.querySelector("#nuevaTarea");
 const mensaje = document.querySelector("#mensaje");
+const botonDeshacer = document.querySelector("#botonDeshacer");
 
 const tareas = [
   new Tarea("Estudiar JavaScript"),
   new Tarea("Completar la bitácora"),
   new Tarea("Repasar el laboratorio"),
 ];
-
+let tareaEliminada = null;
 function mostrarTareas() {
   listaTareas.innerHTML = "";
 
@@ -59,14 +60,17 @@ function mostrarTareas() {
       if (!confirmar) {
         return;
       }
-
       const nombreEliminado = tarea.obtenerDescripcion();
+      tareaEliminada = {
+        tarea: tarea,
+        indice: indice,
+      };
 
       tareas.splice(indice, 1);
 
       mensaje.className = "mensaje exito";
       mensaje.textContent = `Se eliminó la tarea: ${nombreEliminado}.`;
-
+      botonDeshacer.hidden = false;
       mostrarTareas();
     });
 
@@ -77,7 +81,21 @@ function mostrarTareas() {
     listaTareas.appendChild(elemento);
   });
 }
+botonDeshacer.addEventListener("click", () => {
+  if (tareaEliminada === null) {
+    return;
+  }
 
+  tareas.splice(tareaEliminada.indice, 0, tareaEliminada.tarea);
+
+  mensaje.className = "mensaje exito";
+  mensaje.textContent = "Tarea recuperada correctamente.";
+
+  tareaEliminada = null;
+  botonDeshacer.hidden = true;
+
+  mostrarTareas();
+});
 formTarea.addEventListener("submit", (evento) => {
   evento.preventDefault();
 
