@@ -97,27 +97,33 @@
     </style>
   </head>
   <body>
-    <h1>Mi lista de tareas</h1>
+    <main>
+      <h1>Mi lista de tareas</h1>
 
-    <section>
-      <h2>Agregar tarea</h2>
+      <section>
+        <h2>Agregar tarea</h2>
 
-      <form id="formTarea">
-        <label for="nuevaTarea">Nombre de la tarea</label>
+        <form id="formTarea">
+          <label for="nuevaTarea">Nombre de la tarea</label>
 
-        <input type="text" id="nuevaTarea" placeholder="Ej. Estudiar Cálculo" />
+          <input
+            type="text"
+            id="nuevaTarea"
+            placeholder="Ej. Estudiar Cálculo"
+          />
 
-        <button type="submit">Agregar</button>
-        <p id="mensaje" class="mensaje" role="status" aria-live="polite"></p>
-        <button id="botonDeshacer" type="button" hidden>Deshacer</button>
-      </form>
-    </section>
+          <button type="submit">Agregar</button>
+          <p id="mensaje" class="mensaje" role="status" aria-live="polite"></p>
+          <button id="botonDeshacer" type="button" hidden>Deshacer</button>
+        </form>
+      </section>
 
-    <section>
-      <h2>Mis tareas pendientes</h2>
-      <ul id="listaTareas"></ul>
-    </section>
+      <section>
+        <h2>Mis tareas pendientes</h2>
+        <ul id="listaTareas"></ul>
+      </section>
 
-    <script src="app.js"></script>
+      <script src="app.js"></script>
+    </main>
   </body>
 </html>
