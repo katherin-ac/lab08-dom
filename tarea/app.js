@@ -52,6 +52,14 @@ function mostrarTareas() {
     botonEliminar.textContent = "Eliminar";
 
     botonEliminar.addEventListener("click", () => {
+      const confirmar = confirm(
+        `¿Estás seguro de que deseas eliminar la tarea "${tarea.obtenerDescripcion()}"?`,
+      );
+
+      if (!confirmar) {
+        return;
+      }
+
       const nombreEliminado = tarea.obtenerDescripcion();
 
       tareas.splice(indice, 1);
